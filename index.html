@@ -1,170 +1,272 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Laila Hammouch - Portfolio</title>
-<!-- Font Awesome pour les icônes -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-<style>
-/* --- Reset et style global --- */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin:0; padding:0; line-height:1.5;
-    background: #f7f7f7;
-    color:#333;
-}
-a { text-decoration: none; color: #6a00ff; }
-h1,h2,h3 { margin:0.3em 0; }
-section { padding:20px; max-width:900px; margin:auto; }
-hr { border:0; border-top:2px solid #6a00ff; margin:10px 0; }
-ul { margin:5px 0 15px 20px; padding:0; }
-.flex { display:flex; flex-wrap:wrap; justify-content:space-between; }
-.card { background: #fff; border-radius:12px; padding:20px; margin:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1); flex:1 1 300px; transition: transform 0.3s;}
-.card:hover { transform: translateY(-5px); }
-header {
-    background: linear-gradient(135deg, #6a00ff, #00c3ff);
-    color:#fff; text-align:center; padding:40px 10px;
-}
-header img {
-    width:130px; height:130px; border-radius:50%; border:4px solid #fff;
-}
-.btn {
-    background:#fff; color:#6a00ff; padding:10px 20px; border-radius:6px; font-weight:bold; display:inline-block; margin-top:15px;
-}
-.icon { margin-right:8px; color:#6a00ff; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laila Hammouch – Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
+      --color-start: #6a00ff;
+      --color-end: #00c3ff;
+      --text-light: #f0f0f0;
+      --bg-dark: #1a1a2e;
+    }
 
-/* Dégradé pour titres des sections */
-h2 {
-    background: linear-gradient(135deg, #6a00ff, #00c3ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: #fff;
+      background: var(--bg-dark);
+    }
+    a { text-decoration: none; color: inherit; }
 
-/* Compétences avec icônes */
-.skills li { margin-bottom:8px; display:flex; align-items:center; }
-.skills i { font-size:18px; width:25px; }
+    header {
+      background: linear-gradient(135deg, var(--color-start), var(--color-end));
+      text-align: center;
+      padding: 4rem 1rem;
+      position: relative;
+    }
+    header img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      object-fit: cover;
+    }
+    header h1 {
+      margin-top: 1rem;
+      font-size: 2.2rem;
+    }
+    header p.subtitle {
+      margin: .6rem 0;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: .7rem 1.5rem;
+      background: #fff;
+      color: var(--color-start);
+      border-radius: 30px;
+      font-weight: bold;
+      transition: transform .3s;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+    }
 
-/* Responsive */
-@media(max-width:700px){ .flex { flex-direction: column; } }
-</style>
+    section {
+      padding: 3rem 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    section h2 {
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--color-start), var(--color-end));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    section hr {
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(135deg, var(--color-start), var(--color-end));
+      border: none;
+      margin: .5rem auto 2rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: #26264d;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transition: transform .4s, background .4s;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      background: #2e2e70;
+    }
+    .card h3 {
+      margin-bottom: .8rem;
+      font-size: 1.4rem;
+    }
+    .card p.meta {
+      font-style: italic;
+      opacity: 0.8;
+      margin-bottom: 1rem;
+    }
+    .card ul {
+      list-style: none;
+    }
+    .card ul li {
+      margin-bottom: .6rem;
+    }
+
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .skill {
+      background: #26264d;
+      padding: 1rem;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      transition: transform .3s;
+    }
+    .skill:hover {
+      transform: scale(1.05);
+    }
+    .skill i {
+      font-size: 1.5rem;
+      color: var(--color-end);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: .9rem;
+      color: #aaa;
+    }
+
+    /* Animation scroll reveal (simple) */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
 <body>
 
-<header>
-<img src="generated-image.png" alt="Laila Hammouch">
-<h1>LAILA HAMMOUCH</h1>
-<p>Élève ingénieure en Cybersécurité</p>
-<p>
-<a href="mailto:lailahammouch38@gmail.com">Email</a> | 
-<a href="https://www.linkedin.com/in/la%C3%AFla-hammouch-b38b2b264" target="_blank">LinkedIn</a>
-</p>
-<a href="cv.pdf" target="_blank" class="btn">Télécharger mon CV</a>
-</header>
+  <header>
+    <img src="generated-image.png" alt="Photo de Laila Hammouch">
+    <h1>LAILA HAMMOUCH</h1>
+    <p class="subtitle">Élève ingénieure en Cybersécurité</p>
+    <a href="cv.pdf" target="_blank" class="btn">Télécharger mon CV</a>
+  </header>
 
-<section id="profil">
-<h2>Profil</h2><hr>
-<p>Élève ingénieure en 3e année à l’ENSA Khouribga, spécialisée en Réseaux Intelligents et Cybersécurité. Passionnée par la cybersécurité et la sécurité des infrastructures. Actuellement à la recherche d’un stage de fin d’études (PFE) à partir de février 2026.</p>
-</section>
+  <section id="profil" class="reveal">
+    <h2>Profil</h2>
+    <hr>
+    <p>Élève ingénieure en 3ᵉ année à l’ENSA Khouribga, spécialisée en Réseaux Intelligents et Cybersécurité. Passionnée par la cybersécurité et la sécurité des infrastructures. Actuellement à la recherche d’un stage de fin d’études (PFE) à partir de février 2026.</p>
+  </section>
 
-<section id="experience">
-<h2>Expériences</h2><hr>
-<div class="flex">
-  <div class="card">
-    <h3>Ingénieure Détection & Réponse (Cybersécurité & IA)</h3>
-    <p><em>3D Smart Factory | Août - Sept 2025</em></p>
-    <p><strong>Stage PFA : Détection intelligente des menaces</strong></p>
+  <section id="experience" class="reveal">
+    <h2>Expériences</h2>
+    <hr>
+    <div class="cards">
+      <div class="card">
+        <h3>Ingénieure Détection & Réponse (Cybersécurité & IA)</h3>
+        <p class="meta">3D Smart Factory | Août – Sept 2025</p>
+        <ul>
+          <li>Conception d’un agent intelligent de détection et réponse aux incidents.</li>
+          <li>Mise en place d’une infrastructure SOC complète (SIEM, IDS/IPS).</li>
+          <li>Développement d’une interface web pour la visualisation des alertes.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Analyste Gestion des Risques Cybersécurité</h3>
+        <p class="meta">LafargeHolcim Maroc | Juil – Août 2025</p>
+        <ul>
+          <li>Analyse de risques EBIOS Risk Manager sur IT/OT.</li>
+          <li>Identification des actifs critiques et conformité.</li>
+          <li>Recommandations pour la gouvernance et la résilience du système OT.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Analyste SOC & Intrusions Junior</h3>
+        <p class="meta">CodeAlpha | Oct – Nov 2024</p>
+        <ul>
+          <li>Déploiement et supervision d’un IDS réseau (Snort).</li>
+          <li>Développement d’un outil Python d’analyse et corrélation des logs.</li>
+          <li>Rédaction de rapports de vulnérabilités et recommandations.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projets" class="reveal">
+    <h2>Projets Académiques</h2>
+    <hr>
     <ul>
-      <li>Conception d’un agent intelligent de détection et réponse aux incidents.</li>
-      <li>Mise en place d’une infrastructure SOC complète (SIEM, IDS/IPS).</li>
-      <li>Développement d’une interface web pour la visualisation des alertes.</li>
+      <li>Orchestration des vulnérabilités : DefectDojo, OWASP ZAP, Trivy, OpenVAS, Nmap.</li>
+      <li>SOC Use Cases basés sur MITRE ATT&CK : règles, SIEM Wazuh, simulations d’attaques.</li>
+      <li>Attaques et durcissement Cloud (WAF).</li>
+      <li>Cluster de calcul quantique dans le Cloud.</li>
+      <li>Outils de chiffrement / déchiffrement en Python.</li>
     </ul>
-  </div>
-  <div class="card">
-    <h3>Analyste Gestion des Risques Cybersécurité</h3>
-    <p><em>LafargeHolcim Maroc | Juil - Août 2025</em></p>
-    <p><strong>Stage PFA : Analyse de risques et gouvernance</strong></p>
+  </section>
+
+  <section id="competences" class="reveal">
+    <h2>Compétences</h2>
+    <hr>
+    <div class="skills-list">
+      <div class="skill"><i class="fas fa-network-wired"></i><span>TCP/IP, OSPF, VLAN, NAT</span></div>
+      <div class="skill"><i class="fas fa-server"></i><span>Linux, Windows</span></div>
+      <div class="skill"><i class="fas fa-sitemap"></i><span>DNS, DHCP, HTTP, SSH</span></div>
+
+      <div class="skill"><i class="fab fa-aws"></i><span>AWS, OpenStack</span></div>
+      <div class="skill"><i class="fas fa-box"></i><span>VMware, VirtualBox, Hyper‑V, ESXi</span></div>
+      <div class="skill"><i class="fas fa-cube"></i><span>Docker, Kubernetes</span></div>
+
+      <div class="skill"><i class="fas fa-shield-alt"></i><span>SIEM (Wazuh, ELK, Splunk), IDS/IPS, Zeek</span></div>
+      <div class="skill"><i class="fas fa-lock"></i><span>VPN, Firewalls (WAF, pfSense), gestion des logs</span></div>
+
+      <div class="skill"><i class="fas fa-check-circle"></i><span>ISO 27001, EBIOS Risk Manager</span></div>
+      <div class="skill"><i class="fas fa-project-diagram"></i><span>MITRE ATT&CK, OWASP Top 10</span></div>
+      <div class="skill"><i class="fas fa-code"></i><span>Python, C++, MATLAB</span></div>
+    </div>
+  </section>
+
+  <section id="certifications" class="reveal">
+    <h2>Certifications & Langues</h2>
+    <hr>
     <ul>
-      <li>Analyse de risques EBIOS Risk Manager sur IT/OT.</li>
-      <li>Identification des actifs critiques et conformité.</li>
-      <li>Recommandations pour la gouvernance et la résilience du système OT.</li>
+      <li>CCNAv7, CyberOps, Introduction to Cybersecurity (Cisco)</li>
+      <li>AWS Cloud Foundations, Python3 (Hack The Box)</li>
+      <li>Fundamentals in Cybersecurity (Fortinet)</li>
     </ul>
-  </div>
-  <div class="card">
-    <h3>Analyste SOC & Détection d’Intrusions Junior</h3>
-    <p><em>CodeAlpha | Oct - Nov 2024</em></p>
-    <p><strong>Stage Initiation : Détection d’intrusions et analyse réseau</strong></p>
-    <ul>
-      <li>Déploiement et supervision IDS réseau (Snort).</li>
-      <li>Développement d’outil Python d’analyse et corrélation des logs.</li>
-      <li>Rédaction de rapports de vulnérabilités.</li>
-    </ul>
-  </div>
-</div>
-</section>
+    <p><strong>Langues :</strong> Arabe (Natif), Français (Courant), Anglais (Courant)</p>
+  </section>
 
-<section id="projets">
-<h2>Projets Académiques</h2><hr>
-<ul>
-  <li>Orchestration des vulnérabilités avec DefectDojo, OWASP ZAP, Trivy, OpenVAS, Nmap.</li>
-  <li>SOC Use Cases basés sur MITRE ATT&CK : règles, déploiement SIEM Wazuh, simulations d’attaques.</li>
-  <li>Attaques et durcissement d’applications Cloud (WAF).</li>
-  <li>Mise en place d’un cluster de calcul quantique dans le Cloud.</li>
-  <li>Développement d’outils de chiffrement/déchiffrement en Python.</li>
-</ul>
-</section>
+  <section id="activites" class="reveal">
+    <h2>Activités</h2>
+    <hr>
+    <p>Membre des clubs B‑Secure, JLM, Enactus, Comité Masjid et participation à NetcomDay.6</p>
+  </section>
 
-<section id="competences">
-<h2>Compétences</h2><hr>
-<div class="flex">
-  <div class="card">
-    <h3>Réseaux & Systèmes</h3>
-    <ul class="skills">
-      <li><i class="fas fa-network-wired icon"></i>TCP/IP, OSPF, VLAN, NAT</li>
-      <li><i class="fas fa-server icon"></i>Linux, Windows</li>
-      <li><i class="fas fa-sitemap icon"></i>DNS, DHCP, HTTP, SSH</li>
-    </ul>
-  </div>
-  <div class="card">
-    <h3>Cloud, Virtualisation & Conteneurs</h3>
-    <ul class="skills">
-      <li><i class="fab fa-aws icon"></i>AWS, OpenStack</li>
-      <li><i class="fas fa-box icon"></i>VMware, VirtualBox, Hyper-V, ESXi</li>
-      <li><i class="fas fa-cube icon"></i>Docker, Kubernetes</li>
-    </ul>
-  </div>
-  <div class="card">
-    <h3>SOC & Sécurité</h3>
-    <ul class="skills">
-      <li><i class="fas fa-shield-alt icon"></i>SIEM (Wazuh, ELK, Splunk), IDS/IPS, Zeek</li>
-      <li><i class="fas fa-lock icon"></i>VPN, Firewalls (WAF, pfSense), gestion des logs</li>
-    </ul>
-  </div>
-  <div class="card">
-    <h3>Gouvernance & Frameworks</h3>
-    <ul class="skills">
-      <li><i class="fas fa-check-circle icon"></i>ISO 27001, EBIOS Risk Manager</li>
-      <li><i class="fas fa-project-diagram icon"></i>MITRE ATT&CK, OWASP Top 10</li>
-      <li><i class="fas fa-code icon"></i>Python, C++, MATLAB</li>
-    </ul>
-  </div>
-</div>
-</section>
+  <footer>
+    &copy; 2025 Laila Hammouch — Tous droits réservés
+  </footer>
 
-<section id="certifications">
-<h2>Certifications & Langues</h2><hr>
-<ul>
-  <li>CCNAv7, CyberOps, Introduction to Cybersecurity (Cisco)</li>
-  <li>AWS Cloud Foundations, Python3 (Hack The Box)</li>
-  <li>Fundamentals in Cybersecurity (Fortinet)</li>
-</ul>
-<p><strong>Langues :</strong> Arabe (Natif), Français (Courant), Anglais (Courant)</p>
-</section>
-
-<section id="activites">
-<h2>Activités</h2><hr>
-<p>Membre des clubs B-Secure, JLM, Enactus, Comité Masjid et participation à NetcomDay.6</p>
-</section>
-
+  <script>
+    // Simple scroll reveal
+    document.addEventListener('scroll', function() {
+      const reveals = document.querySelectorAll('.reveal');
+      for (const r of reveals) {
+        const top = r.getBoundingClientRect().top;
+        if (top < window.innerHeight - 50) {
+          r.classList.add('active');
+        }
+      }
+    });
+  </script>
 </body>
 </html>
+
