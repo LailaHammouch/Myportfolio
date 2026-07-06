@@ -121,15 +121,7 @@
     font-family:var(--font-mono);font-size:0.72rem;color:var(--text-dim);
     border:1px solid var(--border);border-radius:5px;padding:0.25rem 0.55rem;
   }
-  .status-line{
-    margin-top:1.4rem;font-family:var(--font-mono);font-size:0.78rem;
-    color:var(--green);display:flex;align-items:center;gap:0.5rem;
-    border-top:1px solid var(--border);padding-top:1rem;
-  }
-  .status-line::before{
-    content:'●';font-size:0.6rem;animation:pulse 1.8s infinite;
-  }
-  .id-actions{display:flex;gap:0.8rem;margin-top:1.4rem;flex-wrap:wrap;}
+  .id-actions{display:flex;gap:0.8rem;margin-top:1.6rem;flex-wrap:wrap;}
   .btn{
     font-family:var(--font-mono);font-size:0.78rem;
     padding:0.65rem 1.1rem;border-radius:7px;text-decoration:none;
@@ -328,13 +320,11 @@
     </div>
     <h1>LAILA HAMMOUCH</h1>
     <div class="role">CYBERSECURITY ENGINEER · SOC &amp; IAM</div>
-    <p class="desc">Élève ingénieure en Réseaux Intelligents &amp; Cybersécurité à l'ENSA Khouribga, orientée SOC, GRC et gestion des identités, avec une pratique solide sur les environnements IT/OT critiques.</p>
+    <p class="desc">Ingénieure en Réseaux Intelligents &amp; Cybersécurité diplômée de l'ENSA Khouribga, spécialisée en SOC, GRC et gestion des identités, avec une expertise pratique des environnements critiques IT/OT.</p>
     <div class="tag-row">
       <span class="tag">SOC</span><span class="tag">IAM</span><span class="tag">GRC</span><span class="tag">DFIR</span><span class="tag">AI/ML</span>
     </div>
-    <div class="status-line">PFE ACTIVE — DEVOTEAM CYBER TRUST · FEB–JUN 2026</div>
     <div class="id-actions">
-      <!-- Le bouton appelle désormais la fonction JavaScript pour générer le PDF -->
       <button class="btn btn-solid" id="downloadBtn"><i class="fas fa-download"></i> Télécharger le CV</button>
       <a href="#contact" class="btn btn-ghost"><i class="fas fa-satellite-dish"></i> Me contacter</a>
     </div>
@@ -354,11 +344,11 @@
     <div class="terminal-body" id="termBody">
       <div><span class="k">location</span> <span class="v">&gt; Mobilité nationale, Maroc</span></div>
       <div><span class="k">education</span> <span class="v">&gt; Ingénierie Réseaux &amp; Cybersécurité — ENSA Khouribga (2023–2026)</span></div>
-      <div><span class="k">current_role</span> <span class="v">&gt; PFE SOC Engineer @ Devoteam Cyber Trust Africa</span></div>
+      <div><span class="k">experience</span> <span class="v">&gt; Ex-PFE SOC Engineer @ Devoteam Cyber Trust Africa</span></div>
       <div><span class="k">stack</span> <span class="v">&gt; Wazuh · Zeek · Graylog · SOCFortress CoPilot · DFIR-IRIS · Velociraptor</span></div>
       <div><span class="k">focus</span> <span class="v">&gt; Détection, réponse aux incidents, IAM, automatisation SOAR</span></div>
       <div><span class="k">languages</span> <span class="v">&gt; Arabe (natif) · Français · Anglais</span></div>
-      <div style="margin-top:0.6rem;"><span class="k">status</span> <span class="v">&gt; disponible pour échanger</span><span class="cursor"></span></div>
+      <div style="margin-top:0.6rem;"><span class="k">status</span> <span class="v">&gt; disponible pour de nouvelles opportunités</span><span class="cursor"></span></div>
     </div>
   </div>
 </section>
@@ -367,7 +357,7 @@
   <div class="eyebrow"><span class="green">//</span> WHOAMI</div>
   <h2 class="title">À propos</h2>
   <div class="about-panel">
-    <p>Ingénieure cybersécurité en formation, avec une compréhension transversale de la sécurité défensive et offensive. À l'aise dans la conduite d'opérations de sécurité complexes (SOC), l'analyse de risques (GRC), l'ingénierie d'infrastructures sécurisées et la mise en œuvre de mécanismes de détection avancés sur des environnements IT/OT variés. Actuellement en stage de fin d'études chez Devoteam Cyber Trust Africa, où je conçois et déploie une plateforme SOC interne automatisée pour l'infrastructure MSSP de l'entreprise.</p>
+    <p>Ingénieure cybersécurité diplômée, dotée d'une vision transverse de la sécurité défensive et offensive. Rigoureuse et passionnée par les opérations de sécurité complexes (SOC), l'analyse de risques (GRC), la gestion des identités et des accès (IAM) ainsi que l'ingénierie d'infrastructures sécurisées IT/OT. Forte d'une expérience de fin d'études chez Devoteam Cyber Trust Africa centrée sur la conception d'un SOC interne automatisé, je suis désormais prête à intégrer une équipe pour relever des défis techniques de haut niveau.</p>
   </div>
 </section>
 
@@ -602,7 +592,7 @@
   <div class="eyebrow"><span class="green">//</span> OPEN CHANNEL</div>
   <h2 class="title">Me Contacter</h2>
   <div class="contact-box">
-    <p>Disponible pour toute opportunité de stage, de collaboration ou simplement pour échanger autour de la cybersécurité.</p>
+    <p>Disponible pour toute opportunité professionnelle de collaboration ou simplement pour échanger autour de la cybersécurité.</p>
     <div class="contact-grid">
       <div class="contact-item"><i class="fas fa-envelope"></i><span>laila.hammouch07@gmail.com</span></div>
       <div class="contact-item"><i class="fas fa-phone"></i><span>+212 624337391</span></div>
@@ -728,7 +718,7 @@
 
     const options = {
       margin:       12,
-      filename:     'cv_Laila_Hammouch_CS.pdf',
+      filename:     'CV_Laila_Hammouch.pdf',
       image:        { type: 'jpeg', quality: 0.98 },
       html2canvas:  { scale: 2, useCORS: true, letterRendering: true },
       jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
