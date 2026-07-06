@@ -7,8 +7,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-<!-- Inclusion de html2pdf.js pour la génération du CV en PDF à la volée -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <style>
   :root{
     --bg:#080b14;
@@ -277,24 +275,6 @@
   @media(prefers-reduced-motion:reduce){
     *{animation:none !important;transition:none !important;}
   }
-
-  /* Style propre uniquement pour l'export PDF du CV */
-  .pdf-only {
-    display: none;
-    color: #111 !important;
-    background: #fff !important;
-    font-family: 'Inter', sans-serif;
-    padding: 30px;
-  }
-  .pdf-only h1 { font-family: 'Space Grotesk', sans-serif; font-size: 26px; color: #0f1526; margin-bottom: 5px; text-transform: uppercase; border-bottom: 2px solid #2f6fa8; padding-bottom: 5px; }
-  .pdf-only h2 { font-family: 'Space Grotesk', sans-serif; font-size: 16px; color: #2f6fa8; margin: 15px 0 8px 0; border-bottom: 1px solid #ddd; padding-bottom: 3px; text-transform: uppercase; }
-  .pdf-only p, .pdf-only li { font-size: 11px; color: #333; line-height: 1.5; }
-  .pdf-only ul { list-style-type: square; margin-left: 15px; }
-  .pdf-only .meta-info { display: flex; justify-content: space-between; font-size: 10px; color: #666; margin-bottom: 15px; background: #f5f7fa; padding: 8px; border-radius: 4px; }
-  .pdf-only .cv-item { margin-bottom: 12px; }
-  .pdf-only .cv-item-title { font-weight: bold; font-size: 12px; color: #111; display: flex; justify-content: space-between; }
-  .pdf-only .cv-item-sub { font-style: italic; font-size: 10.5px; color: #555; margin-bottom: 3px; }
-  .pdf-only .cv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
 </style>
 </head>
 <body>
@@ -325,7 +305,10 @@
       <span class="tag">SOC</span><span class="tag">IAM</span><span class="tag">GRC</span><span class="tag">DFIR</span><span class="tag">AI/ML</span>
     </div>
     <div class="id-actions">
-      <button class="btn btn-solid" id="downloadBtn"><i class="fas fa-download"></i> Télécharger le CV</button>
+      <!-- Changement ici : Lien de téléchargement direct vers votre fichier PDF -->
+      <a href="cv_Laila_Hammouch_CS.pdf" download="cv_Laila_Hammouch_CS.pdf" class="btn btn-solid">
+        <i class="fas fa-download"></i> Télécharger le CV
+      </a>
       <a href="#contact" class="btn btn-ghost"><i class="fas fa-satellite-dish"></i> Me contacter</a>
     </div>
     <div class="social-row">
@@ -601,82 +584,6 @@
   </div>
 </section>
 
-<!-- Structure de CV masquée à l'écran, lue uniquement par html2pdf pour l'exportation -->
-<div id="cvTemplate" class="pdf-only">
-  <h1>Laila Hammouch</h1>
-  <p style="font-weight: 500; font-size: 14px; margin-bottom: 5px; color: #555;">Ingénieure Cybersécurité · Spécialité SOC &amp; GRC</p>
-  
-  <div class="meta-info">
-    <div><i class="fas fa-envelope"></i> laila.hammouch07@gmail.com | <i class="fas fa-phone"></i> +212 624337391</div>
-    <div>Casablanca, Maroc (Mobilité Nationale)</div>
-  </div>
-
-  <h2>Éducation</h2>
-  <div class="cv-item">
-    <div class="cv-item-title"><span>Cycle Ingénieur en Réseaux Intelligents &amp; Cybersécurité</span> <span>2023 — 2026</span></div>
-    <div class="cv-item-sub">École Nationale des Sciences Appliquées (ENSA) — Khouribga</div>
-  </div>
-
-  <h2>Expérience Professionnelle</h2>
-  <div class="cv-item">
-    <div class="cv-item-title"><span>Stage de Fin d'Études (PFE) — Ingénieure Cybersécurité / SOC</span> <span>Fév 2026 — Juin 2026</span></div>
-    <div class="cv-item-sub">Devoteam Cyber Trust Africa, Rabat</div>
-    <ul>
-      <li>Conception et déploiement d'une architecture SOC interne automatisée (MSSP).</li>
-      <li>Intégration et parsing de logs sur Wazuh, SOCFortress CoPilot, DFIR-IRIS, Velociraptor.</li>
-      <li>Mise en œuvre de playbooks d'orchestration de réponse sur Shuffle SOAR et intégration MISP CTI.</li>
-    </ul>
-  </div>
-
-  <div class="cv-item">
-    <div class="cv-item-title"><span>Stage d'Ingénierie — Cybersécurité &amp; Intelligence Artificielle</span> <span>Août 2025 — Sept 2025</span></div>
-    <div class="cv-item-sub">3D Smart Factory</div>
-    <ul>
-      <li>Développement d'un agent de détection d'anomalies intelligent appliqué au triage des alertes de sécurité.</li>
-      <li>Configuration d'une pile SIEM/IDS pour la corrélation d'évènements en temps réel.</li>
-    </ul>
-  </div>
-
-  <div class="cv-item">
-    <div class="cv-item-title"><span>Stage d'Ingénierie — Analyse de Risques &amp; Gouvernance (GRC)</span> <span>Juil 2025 — Août 2025</span></div>
-    <div class="cv-item-sub">LafargeHolcim Maroc</div>
-    <ul>
-      <li>Conduite d'analyses de risques approfondies selon le framework EBIOS RM sur infrastructures IT/OT.</li>
-      <li>Cartographie complète des actifs critiques et établissement de plans de traitement des risques.</li>
-    </ul>
-  </div>
-
-  <div class="cv-item">
-    <div class="cv-item-title"><span>Stage d'Initiation — Supervision et Détection d'Intrusions</span> <span>Oct 2024 — Nov 2024</span></div>
-    <div class="cv-item-sub">CodeAlpha</div>
-    <ul>
-      <li>Déploiement et écriture de signatures sur IDS Snort face à des scénarios d'attaques par force brute.</li>
-      <li>Automatisation de l'analyse des flux réseaux suspects via des scripts Python (Scapy).</li>
-    </ul>
-  </div>
-
-  <div class="cv-row cv-grid">
-    <div>
-      <h2>Compétences Clés</h2>
-      <ul>
-        <li><b>SOC / SIEM :</b> Wazuh, Graylog, Splunk, ELK, QRadar</li>
-        <li><b>IDS / DFIR :</b> Snort, Zeek, Suricata, Velociraptor</li>
-        <li><b>IAM &amp; GRC :</b> Keycloak (FIDO2), EBIOS RM, ISO 27001</li>
-        <li><b>Automation :</b> Python, Bash, Shuffle SOAR</li>
-      </ul>
-    </div>
-    <div>
-      <h2>Certifications &amp; Langues</h2>
-      <ul>
-        <li>Cisco CCNAv7 &amp; Cisco CyberOps Associate</li>
-        <li>AWS Certified Cloud Foundations</li>
-        <li>Fortinet Cybersecurity Fundamentals</li>
-        <li><b>Langues :</b> Arabe (Maternelle), Français &amp; Anglais (Courant)</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
 <footer>
   &copy; 2026 Laila Hammouch — ENSA Khouribga · Réseaux Intelligents &amp; Cybersécurité
 </footer>
@@ -708,28 +615,6 @@
   }
   setInterval(tick,1000);
   tick();
-
-  // Logique de conversion HTML en PDF dynamique pour le CV
-  document.getElementById('downloadBtn').addEventListener('click', function () {
-    const element = document.getElementById('cvTemplate');
-    
-    // Rendre l'élément visible de manière temporaire uniquement pour la capture
-    element.style.display = 'block';
-
-    const options = {
-      margin:       12,
-      filename:     'CV_Laila_Hammouch.pdf',
-      image:        { type: 'jpeg', quality: 0.98 },
-      html2canvas:  { scale: 2, useCORS: true, letterRendering: true },
-      jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
-    };
-
-    // Génération du fichier PDF à la volée
-    html2pdf().set(options).from(element).save().then(() => {
-      // Masquer à nouveau l'élément une fois le traitement terminé
-      element.style.display = 'none';
-    });
-  });
 </script>
 
 </body>
